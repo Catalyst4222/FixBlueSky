@@ -11,7 +11,7 @@ export function parseEmbedDescription(post: AppBskyFeedDefs.PostView) {
       const { success: isView } = AppBskyEmbedRecord.validateView(post.embed);
       if (isView && AppBskyEmbedRecord.isViewRecord(post.embed.record)) {
         const { success: isViewRecord } = AppBskyEmbedRecord.validateViewRecord(
-          post.embed.record
+          post.embed.record,
         );
         if (isViewRecord) {
           // @ts-expect-error For some reason the original post value is typed as {}
@@ -21,11 +21,11 @@ export function parseEmbedDescription(post: AppBskyFeedDefs.PostView) {
     }
     if (AppBskyEmbedRecordWithMedia.isView(post.embed)) {
       const { success: isView } = AppBskyEmbedRecordWithMedia.validateView(
-        post.embed
+        post.embed,
       );
       if (isView && AppBskyEmbedRecord.isViewRecord(post.embed.record.record)) {
         const { success: isViewRecord } = AppBskyEmbedRecord.validateViewRecord(
-          post.embed.record.record
+          post.embed.record.record,
         );
         if (isViewRecord) {
           // @ts-expect-error For some reason the original post value is typed as {}

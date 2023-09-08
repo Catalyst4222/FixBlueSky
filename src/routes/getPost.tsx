@@ -21,6 +21,6 @@ export const getPost: Handler<
       post={data.posts[0]}
       url={c.req.path}
       appDomain={c.env.FIXBLUESKY_APP_DOMAIN}
-    />
+    />,
   );
 };

@@ -132,3 +132,6 @@ dist
 .dev.vars
 tunnel.yml
 .wrangler
+
+
+.vscode/**

@@ -20,6 +20,6 @@ export const getProfile: Handler<
       profile={data}
       url={c.req.path}
       appDomain={c.env.FIXBLUESKY_APP_DOMAIN}
-    />
+    />,
   );
 };

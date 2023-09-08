@@ -1,3 +1,4 @@
+import { BskyAgent } from "@atproto/api";
 import { Handler } from "hono";
 
 export enum OEmbedTypes {
@@ -5,13 +6,16 @@ export enum OEmbedTypes {
   Profile,
 }
 
-export const getOEmbed: Handler<Env, "/oembed"> = async (c) => {
+export const getOEmbed: Handler<
+  { Variables: { Agent: BskyAgent } },
+  "/oembed"
+> = async (c) => {
   const type = +(c.req.query("type") ?? 0);
   const avatar = c.req.query("avatar");
 
   const defaults = {
     provider_name: "FixBluesky",
-    provider_url: "https://bsyy.app/",
+    provider_url: "127.0.0.1/",
     thumbnail_url: avatar,
     thumbnail_width: 1000,
     thumbnail_height: 1000,

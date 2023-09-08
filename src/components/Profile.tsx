@@ -24,7 +24,7 @@ export const Profile = ({ profile, url, appDomain }: ProfileProps) => (
       href={`https://${appDomain}/oembed?type=${OEmbedTypes.Profile}&follows=${
         profile.followsCount
       }&posts=${profile.postsCount}&avatar=${encodeURIComponent(
-        profile.avatar ?? ""
+        profile.avatar ?? "",
       )}`}
     />
   </Layout>

@@ -7,7 +7,7 @@ export interface fetchPostOptions {
 
 export async function fetchPost(
   agent: BskyAgent,
-  { user, post }: fetchPostOptions
+  { user, post }: fetchPostOptions,
 ) {
   const { data: userData } = await agent.getProfile({
     actor: user,

@@ -6,7 +6,7 @@ export interface fetchProfileOptions {
 
 export async function fetchProfile(
   agent: BskyAgent,
-  { user }: fetchProfileOptions
+  { user }: fetchProfileOptions,
 ) {
   return agent.getProfile({
     actor: user,

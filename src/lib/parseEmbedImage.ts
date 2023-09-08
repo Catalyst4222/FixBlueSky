@@ -10,7 +10,7 @@ export function parseEmbedImage(post: AppBskyFeedDefs.PostView) {
     const { success: isView } = AppBskyEmbedRecord.validateView(post.embed);
     if (isView && AppBskyEmbedRecord.isViewRecord(post.embed.record)) {
       const { success: isViewRecord } = AppBskyEmbedRecord.validateViewRecord(
-        post.embed.record
+        post.embed.record,
       );
       if (
         isViewRecord &&
@@ -18,7 +18,7 @@ export function parseEmbedImage(post: AppBskyFeedDefs.PostView) {
         AppBskyEmbedImages.isView(post.embed.record.embeds[0])
       ) {
         const { success: isImageView } = AppBskyEmbedImages.validateView(
-          post.embed.record.embeds[0]
+          post.embed.record.embeds[0],
         );
         if (isImageView) {
           return post.embed.record.embeds[0].images[0].fullsize;
@@ -28,11 +28,11 @@ export function parseEmbedImage(post: AppBskyFeedDefs.PostView) {
   }
   if (AppBskyEmbedRecordWithMedia.isView(post.embed)) {
     const { success: isView } = AppBskyEmbedRecordWithMedia.validateView(
-      post.embed
+      post.embed,
     );
     if (isView && AppBskyEmbedImages.isView(post.embed.media)) {
       const { success: isImageView } = AppBskyEmbedImages.validateView(
-        post.embed.media
+        post.embed.media,
       );
       if (isImageView) {
         return post.embed.media.images[0].fullsize;
@@ -41,7 +41,7 @@ export function parseEmbedImage(post: AppBskyFeedDefs.PostView) {
   }
   if (AppBskyEmbedImages.isView(post.embed)) {
     const { success: isImageView } = AppBskyEmbedImages.validateView(
-      post.embed
+      post.embed,
     );
     if (isImageView) {
       return post.embed.images[0].fullsize;

@@ -11,7 +11,7 @@ export const Layout = ({ url, children }: LayoutProps) => {
     ? removeLeadingSlash
     : `https://bsky.app/${removeLeadingSlash}`;
   return html`
-    <!DOCTYPE html>
+    <!doctype html>
     <html>
       <head>
         <link rel="canonical" href="${url.substring(1)}" />
