@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { BskyAgent } from "@atproto/api";
 import { Handler } from "hono";
 
@@ -9,13 +10,13 @@ export enum OEmbedTypes {
 export const getOEmbed: Handler<
   { Variables: { Agent: BskyAgent } },
   "/oembed"
-> = async (c) => {
-  const type = +(c.req.query("type") ?? 0);
+> = (c) => {
+  const type = Number(c.req.query("type") ?? 0);
   const avatar = c.req.query("avatar");
 
   const defaults = {
     provider_name: "FixBluesky",
-    provider_url: "127.0.0.1/",
+    provider_url: "bluesky.catalyst4.dev/",
     thumbnail_url: avatar,
     thumbnail_width: 1000,
     thumbnail_height: 1000,

@@ -1,4 +1,4 @@
-import { BskyAgent } from "@atproto/api";
+import { AppBskyActorGetProfile, BskyAgent } from "@atproto/api";
 
 export interface fetchProfileOptions {
   user: string;
@@ -7,8 +7,8 @@ export interface fetchProfileOptions {
 export async function fetchProfile(
   agent: BskyAgent,
   { user }: fetchProfileOptions,
-) {
-  return agent.getProfile({
+): Promise<AppBskyActorGetProfile.Response> {
+  return await agent.getProfile({
     actor: user,
   });
 }

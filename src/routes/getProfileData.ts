@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from "hono/jsx";
 import { Handler } from "hono";
 import { HTTPException } from "hono/http-exception";
 import { fetchProfile } from "../lib/fetchProfile";

@@ -19,7 +19,7 @@ export const getProfile: Handler<
     <Profile
       profile={data}
       url={c.req.path}
-      appDomain={c.env.FIXBLUESKY_APP_DOMAIN}
+      appDomain={process.env.FIXBLUESKY_APP_DOMAIN}
     />,
   );
 };

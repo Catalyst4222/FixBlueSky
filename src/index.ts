@@ -23,7 +23,7 @@ app.use("*", async (c, next) => {
 });
 
 app.get("/", (c) => {
-  return c.redirect("https://github.com/ThornbushHQ/FixBluesky");
+  return c.redirect("https://github.com/Catalyst4222/FixBlueSky");
 });
 
 app.get("/profile/:user/post/:post", getPost);

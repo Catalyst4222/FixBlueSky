@@ -5,7 +5,7 @@ import {
   AppBskyFeedDefs,
 } from "@atproto/api";
 
-export function parseEmbedImage(post: AppBskyFeedDefs.PostView) {
+export function parseEmbedImage(post: AppBskyFeedDefs.PostView): string {
   if (AppBskyEmbedRecord.isView(post.embed)) {
     const { success: isView } = AppBskyEmbedRecord.validateView(post.embed);
     if (isView && AppBskyEmbedRecord.isViewRecord(post.embed.record)) {
